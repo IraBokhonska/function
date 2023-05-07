@@ -17,11 +17,11 @@
 // --------------------------------------------------------------------------------------------------------------------------------
 // 2. Створи функцію, яка буде виводити кількість переданих їй аргументів.
 
-function countNumbers(...numbers) {
+function countParameter(...numbers) {
   console.log(numbers.length);
 }
 
-countNumbers(1, 2, 3, 4, 5);
+countParameter(1, 2, 3, 4, 5);
 
 // 4. Напиши функцію, яка обчислює факторіал переданого їй числа.
 // Факторіал натурального числа — добуток натуральних чисел від одиниці до
@@ -33,9 +33,11 @@ function getFactorial(someNumber) {
 
   if (correctNumber === true) {
     let multiplication = 1;
+
     for (let index = 1; index <= someNumber; index++) {
       multiplication *= index;
     }
+
     console.log(multiplication);
   } else {
     console.log("Enter positive integer.");
@@ -48,6 +50,6 @@ getFactorial(5);
 // Якщо в функцію передали 1 параметр, то вона обчислює площу квадрата.
 // стрілочна функція
 
-let getRectangleArea = (width, height = width) => width * height;
+const getRectangleArea = (width, height) => width * (height || width);
 
-console.log(getRectangleArea(5, 15));
+console.log(getRectangleArea(5));
